@@ -9,7 +9,7 @@ Windows 10 setup scripts for fresh installs
 
 ## Usage
 
-Fork or download this repo, **MODIFY** the scripts and execute `setup.cmd` in your fresh installed computer.
+Fork or download this repo, **MODIFY** the scripts, and execute `setup.cmd` in your fresh installed computer.
 
 **Run it as Administrator** to ensure that the script can run normally.
 
@@ -19,53 +19,55 @@ Fork or download this repo, **MODIFY** the scripts and execute `setup.cmd` in yo
 
 ## Structure
 
-### File
-
-#### setup.cmd
+### setup.cmd
 
 Execute `setup.ps1` bypassing the default setting that does not allow `.ps1` scripts to be executed in Win10.
 
-#### setup.ps1
+### setup.ps1
 
 Contains the main flow of the script, which calls functions in `setup.psm1`
 
-#### setup.psm1
+### setup.psm1
 
 Some wrapped atomic operations are called by setup.ps1
 
-#### tweaks.\*
+### tweaks.\*
 
-Transplant from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script), a very comprehensive Win10 Initial Setup Script.
+A transplant from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script), a very comprehensive Win10 Initial Setup Script.
 
 `tweaks.preset` is my custom preset. You'd better write a preset yourself compared with the original project.
 
-#### Add_PS1_Run_as_administrator.reg
+### Add_PS1_Run_as_administrator.reg
 
-An **optional** registry. Import it to your registry can enable context menu on the powershell files to run as Administrator.
+An **optional** registry. Import it to your registry can enable the context menu on the powershell files to run as Administrator.
 
-### Script content
+## What will the script do
 
-- Modify system config
-  - Activate win10 by [kmspro](https://github.com/dylanbai8/kmspro)
-  - Set a new computer name
-  - Set power settings
-  - Excute Tweaks from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script)
-    - Disable Cortana, AdvertisingID, UpdateRestart...
-    - Set DeveloperMode, DarkMode, SmallTaskbarIcons...
-    - Hide LibraryMenu, RecentShortcuts...
-    - Uninstall OneDrive, Xbox...
-- Remove pre-installed apps
+### Modify system config
+
+- Activate win10 by [kmspro](https://github.com/dylanbai8/kmspro)
+- Set a new computer name
+- Set power settings
+- Excute Tweaks from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script)
+  - Disable Cortana, AdvertisingID, UpdateRestart...
+  - Set DeveloperMode, DarkMode, SmallTaskbarIcons...
+  - Hide LibraryMenu, RecentShortcuts...
+  - Uninstall OneDrive, Xbox...
+
+### Install Applications
+
+- Remove built-in apps
   - Skype
   - YourPhone
   - Print3D
   - GetHelp
   - ...
-- Install software by winget
+- Install apps by Winget
   - Visual Studio Code
   - QQ, WeChat
   - Git, NodeJS, Miniconda
   - ...
-- Install softwave by chocolaty (that can't be installed from Winget)
+- Install apps by Chocolaty (that can't be installed from Winget)
   - v2ray
   - ffmpeg
   - traffic-monitor
@@ -74,13 +76,16 @@ An **optional** registry. Import it to your registry can enable context menu on 
   - Snipaste
   - WGestures
   - ...
+
+### Others
+
 - Configure the environment
   - Set git name and email
   - Enable git proxy
   - Enable npm taobao registry
 - Install npm global packages
   - whistle
-- Clone my own repos
+- Clone my repos
   - awesome-ahk
 - Restart computer
 
