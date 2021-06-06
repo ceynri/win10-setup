@@ -33,7 +33,7 @@ Some wrapped atomic operations are called by setup.ps1
 
 ### tweaks.\*
 
-A transplant from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script), a very comprehensive Win10 Initial Setup Script.
+A transplant from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/Disassembler0/Win10-Initial-Setup-Script).
 
 `tweaks.preset` is my custom preset. You'd better write a preset yourself compared with the original project.
 
@@ -41,7 +41,7 @@ A transplant from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/
 
 An **optional** registry. Import it to your registry can enable the context menu on the powershell files to run as Administrator.
 
-## What will the script do
+## What will the scripts do
 
 ### Modify system config
 
