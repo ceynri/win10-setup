@@ -1,0 +1,92 @@
+RequireAdmin
+
+# Privacy Tweaks
+DisableTelemetry
+DisableCortana
+DisableWiFiSense
+DisableAppSuggestions
+DisableActivityHistory
+DisableLocation
+DisableMapUpdates
+DisableFeedback
+DisableTailoredExperiences
+DisableAdvertisingID
+DisableErrorReporting
+DisableDiagTrack
+DisableWAPPush
+
+# UWP Privacy
+DisableUWPBackgroundApps
+
+# Security
+EnableF8BootMenu
+
+# Network
+SetCurrentNetworkPrivate
+DisableRemoteAssistance
+EnableRemoteDesktop
+
+# Service
+DisableUpdateRestart
+DisableMaintenanceWakeUp
+DisableSharedExperiences
+DisableAutoplay
+DisableAutorun
+EnableNTFSLongPaths
+
+# UI
+DisableAccessibilityKeys
+ShowTaskManagerDetails
+HideTaskbarSearch
+HideTaskView
+ShowSmallTaskbarIcons
+SetTaskbarCombineNever
+HideTaskbarPeopleIcon
+DisableSearchAppInStore
+DisableNewAppPrompt
+DisableShortcutInName
+SetAppsDarkMode
+SetSystemDarkMode
+AddENKeyboard
+DisableEnhPointerPrecision
+DisableF1HelpKey
+
+# Explorer UI
+ShowKnownExtensions
+ShowHiddenFiles
+# EnableNavPaneExpand
+HideSyncNotifications
+HideRecentShortcuts
+SetExplorerThisPC
+HideThisPCFromDesktop
+HideDesktopFromThisPC
+HideDocumentsFromThisPC
+HideDocumentsFromExplorer
+HideDownloadsFromThisPC
+HideDownloadsFromExplorer
+HideMusicFromThisPC
+HideMusicFromExplorer
+HidePicturesFromThisPC
+HidePicturesFromExplorer
+HideVideosFromThisPC
+HideVideosFromExplorer
+Hide3DObjectsFromThisPC
+Hide3DObjectsFromExplorer
+HideIncludeInLibraryMenu
+
+# Application
+DisableOneDrive
+UninstallOneDrive
+UninstallThirdPartyBloat
+DisableXboxFeatures
+DisableAdobeFlash
+DisableEdgeShortcutCreation
+DisableIEFirstRun
+DisableMediaSharing
+EnableDeveloperMode
+UninstallMediaPlayer
+UninstallXPSPrinter
+RemoveFaxPrinter
+
+# Auxiliary
+WaitForKey
