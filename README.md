@@ -37,9 +37,15 @@ A transplant from [Disassembler0/Win10-Initial-Setup-Script](https://github.com/
 
 `tweaks.preset` is my custom preset. You'd better write a preset yourself compared with the original project.
 
-### Add_PS1_Run_as_administrator.reg
+## Optional
 
-An **optional** registry. Import it to your registry can enable the context menu on the powershell files to run as Administrator.
+### ps1-run-administrator-context-menu.reg
+
+Import it to your registry can enable the context menu on the powershell files to run as Administrator.
+
+### vscode-context-menu.reg
+
+Add "Open with Code" to the directory or file context menu. (Need modify path by yourself)
 
 ## What will the scripts do
 
