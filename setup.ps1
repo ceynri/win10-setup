@@ -62,6 +62,7 @@ $wingetApps = @(
     "Netease.CloudMusic",
     "VideoLAN.VLC", # seems that the download is slow, and easy to report errors？
     # "OBSProject.OBSStudio",
+    # "c0re100.qBittorrent-Enhanced-Edition",
 
     "SyncTrayzor.SyncTrayzor",
     "NickeManarin.ScreenToGif",
