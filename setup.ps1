@@ -44,7 +44,8 @@ $wingetApps = @(
     "Qv2ray.Qv2ray",
     # "7zip.7zip",
     "Bandisoft.Bandizip -v 6.29", # the old version without ads
-    "Bandisoft.Honeyview",
+    # "Bandisoft.Honeyview",
+    "nomacs.nomacs",
 
     "Microsoft.VisualStudioCode",
     "Microsoft.Edge",
@@ -59,7 +60,7 @@ $wingetApps = @(
 
     "agalwood.Motrix",
     "Netease.CloudMusic",
-    # "VideoLAN.VLC",
+    "VideoLAN.VLC", # seems that the download is slow, and easy to report errors？
     # "OBSProject.OBSStudio",
 
     "SyncTrayzor.SyncTrayzor",
@@ -72,12 +73,12 @@ $wingetApps = @(
 )
 $chocoApps = @(
     "v2ray",
-    "nvm.portable",
     "traffic-monitor",
+    "nvm.portable"
     # "aria2"
-    "ffmpeg",
+    # "ffmpeg",
     # "freefilesync",
-    "setpoint"
+    # "setpoint",
 )
 $npmPackages = @(
     "whistle"
@@ -138,6 +139,7 @@ WaitForKey
 SetGitNameAndEmail
 EnableGitProxy(10809)
 EnableNpmRegistry
+# InstallWindowsBuildTools
 
 # others download
 InstallNpmPackage($npmPackages)
