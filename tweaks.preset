@@ -3,7 +3,6 @@ RequireAdmin
 # Privacy Tweaks
 DisableTelemetry
 DisableCortana
-DisableWiFiSense
 DisableAppSuggestions
 DisableActivityHistory
 DisableLocation
@@ -38,13 +37,13 @@ EnableNTFSLongPaths
 DisableAccessibilityKeys
 ShowTaskManagerDetails
 HideTaskbarSearch
-HideTaskView
+HideTaskView  # 任务栏的任务视图按钮
 ShowSmallTaskbarIcons
 SetTaskbarCombineNever
 HideTaskbarPeopleIcon
 DisableSearchAppInStore
 DisableNewAppPrompt
-DisableShortcutInName
+DisableShortcutInName # 不在快捷方式最后面添加一个“- 快捷方式”的后缀
 SetAppsDarkMode
 SetSystemDarkMode
 AddENKeyboard
@@ -54,10 +53,10 @@ DisableF1HelpKey
 # Explorer UI
 ShowKnownExtensions
 ShowHiddenFiles
-# EnableNavPaneExpand
+# EnableNavPaneExpand  # Explorer 侧边导航栏自动展开到当前文件夹
 HideSyncNotifications
 HideRecentShortcuts
-SetExplorerThisPC
+SetExplorerThisPC  # Win + E 打开“此电脑”而不是“快速访问”
 HideThisPCFromDesktop
 HideDesktopFromThisPC
 HideDocumentsFromThisPC
@@ -84,7 +83,7 @@ DisableEdgeShortcutCreation
 DisableIEFirstRun
 DisableMediaSharing
 EnableDeveloperMode
-UninstallMediaPlayer
+# UninstallMediaPlayer
 UninstallXPSPrinter
 RemoveFaxPrinter
 
