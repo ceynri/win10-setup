@@ -287,6 +287,9 @@ Function AddNodeSassMirror() {
 Function InstallWindowsBuildTools() {
     set "PYTHON_MIRROR=http://npm.taobao.org/mirrors/python"
     if (CheckCommand -cmdname 'npm') {
+        # If the output hang on the "Successfully installed Python 2.7", you may need to solve it yourself.
+        # Related issue: https://github.com/felixrieseberg/windows-build-tools/issues/172
+        # For me: npm install --global --production windows-build-tools@4.0.0
         npm install --global --production windows-build-tools
     }
     else {
