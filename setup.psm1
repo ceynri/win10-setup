@@ -11,9 +11,9 @@
 ##########
 
 $currentDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$tmpDir = "$currentDir/tmp"
-$userDir = "C:/ceynri"
-$workspaceDir = "$userDir/workspace"
+$tmpDir = "$currentDir\tmp"
+$userDir = "C:\ceynri"
+$workspaceDir = "$userDir\workspace"
 
 ##########
 # utils
@@ -35,19 +35,19 @@ Function CheckCommand($cmdname) {
 # create a temp directory
 Function CreateTmpDir() {
     PrintLog "Creating the temp directory..."
-    New-Item -Path $currentDir -Name "tmp" -type directory
+    New-Item -Path $currentDir -Name "tmp" -type directory -ErrorAction SilentlyContinue
 }
 
 # remove the temp directory
 Function RemoveTmpDir() {
     PrintLog "Removing the temp directory..."
-    Remove-Item $tmpDir -recurse
+    Remove-Item $tmpDir -recurse -ErrorAction SilentlyContinue
 }
 
 # create a temp directory
 Function CreateWorkspaceDir() {
     PrintLog "Checking the workspace directory..."
-    New-Item -Path $userDir -Name "workspace" -type directory
+    New-Item -Path $userDir -Name "workspace" -type directory -ErrorAction SilentlyContinue
 }
 
 Function RefreshEnv() {
@@ -122,21 +122,27 @@ Function ChocoProxyWarning() {
 	WaitForKey
 }
 
+# Download installation package by wget
+Function WgetDownloadAndInstall($name, $url, $dir) {
+    PrintLog "Downloading $name installation package..."
+    PrintLog "Please execute install manually in the open window when download is complete"
+    $path = "$dir\$name"
+    wget -O $path $url
+    &$path
+    PrintWarn "Enter any key until the installation is complete"
+    WaitForKey
+}
+
 # install winget
 Function InstallWinget() {
     if (CheckCommand -cmdname 'winget') {
         PrintLog "Winget is already installed, skip installation."
     }
     else {
-        PrintLog "Downloading winget installation package..."
-        PrintLog "Please execute install manually in the open window when download is complete"
-        $downloadPath = "$tmpDir/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
-        wget -O $downloadPath "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
-
-        &$downloadPath
-        
-        PrintWarn "[WAITING] Enter any key until the installation is complete"
-        WaitForKey
+        $name = "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
+        $url = "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle"
+        WgetDownloadAndInstall -name $name -url $url -dir $tmpDir
+        Remove-Item $tmpDir\$name
     }
 }
 
@@ -196,7 +202,17 @@ Function InstallNpmPackage($npmPackages) {
 Function ManualInstallApp($notInstalledApps) {
     PrintLog "There are also the following uninstalled apps, you need to install manually:"
     foreach ($app in $notInstalledApps) {
-        Write-Output "$app"
+        $splitNameAndUrl = $app.split(" ");
+        if ($splitNameAndUrl.Length -eq 3) {
+            PrintInfo "$app (download link exists)"
+            $name = $splitNameAndUrl[0]
+            $url = $splitNameAndUrl[2]
+            WgetDownloadAndInstall -name $name -url $url -dir $tmpDir
+        }
+        else {
+            PrintInfo "$app"
+        }
+    } }
     }
 }
 
@@ -306,6 +322,10 @@ Function WaitForKey() {
 	[Console]::ReadKey($true) | Out-Null
 }
 
+Function PrintInfo($str) {
+    Write-Host $str -ForegroundColor Gray
+}
+
 Function PrintLog($str) {
     Write-Host $str -ForegroundColor Green
 }
@@ -318,9 +338,11 @@ Function PrintError($str) {
     Write-Host $str -ForegroundColor Red
 }
 
-Function ClearInstallationTips() {
-    PrintWarn "[TIPS] You can remove installation package in the 'tmp' directory"
-    WaitForKey
+Function RemoveTmpCheck() {
+    $removeInput = Read-Host "Remove the 'tmp' directory (if you had install all installation package in 'tmp' dircetory) (y/[N])"
+    if ((('y', 'Y', 'yes') -contains $removeInput)) {
+        RemoveTmpDir
+    }
 }
 
 Function RestartTips() {

@@ -88,12 +88,14 @@ $gitRepos = @(
     "awesome-ahk"
 )
 
+# add -url can download by wget
+# Do not add extra spaces to separate app name
 $notInstalledApps = @(
-    "Snipaste: https://dl.snipaste.com/win-x64-beta-cn",
-    "WGestures: https://www.yingdev.com/Content/Projects/WGestures/Release/1.8.4.0/Install%20WGestures%201.8.4.0.zip",
+    "Snipaste.zip -url https://dl.snipaste.com/win-x64-beta-cn",
+    "WGestures.zip -url https://www.yingdev.com/Content/Projects/WGestures/Release/1.8.4.0/Install%20WGestures%201.8.4.0.zip",
 
-    "Office 365",
-    "Office Tool Plus",
+    "Office365",
+    "OfficeToolPlus",
     "PhotoShop",
     "Premiere",
 
@@ -148,5 +150,5 @@ CreateWorkspaceDir
 CloneGitRepos($gitRepos)
 
 # end
-RemoveTmpDir
+RemoveTmpCheck
 RestartTips
