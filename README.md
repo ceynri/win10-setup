@@ -99,4 +99,4 @@ Some scripts or registries that you can selectively execute. Please check the RE
 
 ## License
 
-MIT
+MIT © ceynri
