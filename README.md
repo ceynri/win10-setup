@@ -4,6 +4,8 @@ Windows 10 setup scripts for fresh installs. By executing the script, you can co
 
 ## What will the scripts do
 
+> The following is my personal configuration, you can modify the script to suit your usage habits.
+
 ### Modify system config
 
 - Activate win10 by [kmspro](https://github.com/dylanbai8/kmspro)
