@@ -1,6 +1,6 @@
 # Windows 10 Setup Scripts
 
-Windows 10 setup scripts for fresh installs
+Windows 10 setup scripts for fresh installs. By executing the script, you can complete your scheduled system configuration and the installation of common software **semi-automatically**.
 
 ## What will the scripts do
 
