@@ -43,9 +43,9 @@ $msftBloats = @(
 $wingetApps = @(
     "Qv2ray.Qv2ray",
     # "7zip.7zip",
+    # "nomacs.nomacs",
     "Bandisoft.Bandizip -v 6.29", # the old version without ads
-    # "Bandisoft.Honeyview",
-    "nomacs.nomacs",
+    "Bandisoft.Honeyview",
 
     "Microsoft.VisualStudioCode",
     "Microsoft.Edge",
